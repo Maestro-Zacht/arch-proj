@@ -597,7 +597,7 @@ void confirm_move(void) {
 		}
 	}
 	else {
-		if(!is_this_board_playing() || place_wall(new_wall)) {
+		if(place_wall(new_wall)) {
 			disable_timer(3);
 			apply_mode(1);
 			current_player->remaining_walls--;
@@ -730,6 +730,7 @@ void receive_move(uint32_t received_move) {
 	if (move_wall == 0 && vert_hor == 1)
 		time_finished();
 	else {
+		apply_mode(1);
 		if (move_wall == 0) {
 			mode = 0;
 			chosen_pos.x = y;

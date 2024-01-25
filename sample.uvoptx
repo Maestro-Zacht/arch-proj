@@ -135,7 +135,7 @@
         <SetRegEntry>
           <Number>0</Number>
           <Key>DLGTARM</Key>
-          <Name>(1010=-57,253,328,809,1)(1007=18,285,195,550,0)(1008=-1,-1,-1,-1,0)(1009=-1,-1,-1,-1,0)(1012=-1,-1,-1,-1,0)(350=387,513,626,757,0)(250=-1,-1,-1,-1,0)(270=26,134,218,265,0)(313=0,120,864,645,0)(291=25,571,328,746,0)(302=0,217,252,656,0)(110=1030,412,1366,730,0)(113=-1,-1,-1,-1,0)(320=1122,69,1353,387,0)(210=-1,-1,-1,-1,0)(330=-1,-1,-1,-1,0)(332=-1,-1,-1,-1,0)(333=-1,-1,-1,-1,0)(334=682,550,1280,734,0)(335=-1,-1,-1,-1,0)(336=-1,-1,-1,-1,0)(345=-1,-1,-1,-1,0)(346=-1,-1,-1,-1,0)(381=-1,-1,-1,-1,0)(382=-1,-1,-1,-1,0)(383=-1,-1,-1,-1,0)(384=-1,-1,-1,-1,0)(197=-1,-1,-1,-1,0)(198=368,583,660,824,1)(191=400,269,1106,757,1)(192=830,376,1536,864,0)(180=-1,-1,-1,-1,0)(261=-1,-1,-1,-1,0)(262=-1,-1,-1,-1,0)(231=-1,-1,-1,-1,0)(232=-1,-1,-1,-1,0)(233=-1,-1,-1,-1,0)(121=674,227,1190,705,0)(122=-1,-1,-1,-1,0)(123=-1,-1,-1,-1,0)(124=-1,-1,-1,-1,0)(170=62,115,305,381,0)(142=-1,-1,-1,-1,0)(150=-1,-1,-1,-1,0)(400=-1,-1,-1,-1,0)(370=-1,-1,-1,-1,0)(160=-1,-1,-1,-1,0)(280=803,161,1245,665,0)(240=121,525,488,673,0)</Name>
+          <Name>(1010=1114,203,1499,759,1)(1007=18,285,195,550,0)(1008=-1,-1,-1,-1,0)(1009=-1,-1,-1,-1,0)(1012=-1,-1,-1,-1,0)(350=387,513,626,757,0)(250=-1,-1,-1,-1,0)(270=26,134,218,265,0)(313=0,120,864,645,0)(291=25,571,328,746,0)(302=0,217,252,656,0)(110=1030,412,1366,730,0)(113=-1,-1,-1,-1,0)(320=1122,69,1353,387,0)(210=-1,-1,-1,-1,0)(330=-1,-1,-1,-1,0)(332=-1,-1,-1,-1,0)(333=-1,-1,-1,-1,0)(334=682,550,1280,734,0)(335=-1,-1,-1,-1,0)(336=-1,-1,-1,-1,0)(345=-1,-1,-1,-1,0)(346=-1,-1,-1,-1,0)(381=-1,-1,-1,-1,0)(382=-1,-1,-1,-1,0)(383=-1,-1,-1,-1,0)(384=-1,-1,-1,-1,0)(197=-1,-1,-1,-1,0)(198=368,583,660,824,1)(191=693,187,1399,675,1)(192=830,376,1536,864,0)(180=-1,-1,-1,-1,0)(261=-1,-1,-1,-1,0)(262=-1,-1,-1,-1,0)(231=-1,-1,-1,-1,0)(232=-1,-1,-1,-1,0)(233=-1,-1,-1,-1,0)(121=674,227,1190,705,0)(122=-1,-1,-1,-1,0)(123=-1,-1,-1,-1,0)(124=-1,-1,-1,-1,0)(170=62,115,305,381,0)(142=-1,-1,-1,-1,0)(150=-1,-1,-1,-1,0)(400=-1,-1,-1,-1,0)(370=-1,-1,-1,-1,0)(160=-1,-1,-1,-1,0)(280=803,161,1245,665,0)(240=121,525,488,673,0)</Name>
         </SetRegEntry>
         <SetRegEntry>
           <Number>0</Number>
@@ -152,66 +152,18 @@
         <Bp>
           <Number>0</Number>
           <Type>0</Type>
-          <LineNumber>30</LineNumber>
+          <LineNumber>730</LineNumber>
           <EnabledFlag>1</EnabledFlag>
-          <Address>27576</Address>
+          <Address>24840</Address>
           <ByteObject>0</ByteObject>
           <HtxType>0</HtxType>
           <ManyObjects>0</ManyObjects>
           <SizeOfObject>0</SizeOfObject>
           <BreakByAccess>0</BreakByAccess>
           <BreakIfRCount>1</BreakIfRCount>
-          <Filename>.\CAN\IRQ_CAN.c</Filename>
+          <Filename>.\game\game.c</Filename>
           <ExecCommand></ExecCommand>
-          <Expression>\\sample\CAN/IRQ_CAN.c\30</Expression>
-        </Bp>
-        <Bp>
-          <Number>1</Number>
-          <Type>0</Type>
-          <LineNumber>131</LineNumber>
-          <EnabledFlag>1</EnabledFlag>
-          <Address>28112</Address>
-          <ByteObject>0</ByteObject>
-          <HtxType>0</HtxType>
-          <ManyObjects>0</ManyObjects>
-          <SizeOfObject>0</SizeOfObject>
-          <BreakByAccess>0</BreakByAccess>
-          <BreakIfRCount>1</BreakIfRCount>
-          <Filename>.\CAN\lib_CAN.c</Filename>
-          <ExecCommand></ExecCommand>
-          <Expression>\\sample\CAN/lib_CAN.c\131</Expression>
-        </Bp>
-        <Bp>
-          <Number>2</Number>
-          <Type>0</Type>
-          <LineNumber>87</LineNumber>
-          <EnabledFlag>1</EnabledFlag>
-          <Address>27498</Address>
-          <ByteObject>0</ByteObject>
-          <HtxType>0</HtxType>
-          <ManyObjects>0</ManyObjects>
-          <SizeOfObject>0</SizeOfObject>
-          <BreakByAccess>0</BreakByAccess>
-          <BreakIfRCount>1</BreakIfRCount>
-          <Filename>.\joystick\funct_joystick.c</Filename>
-          <ExecCommand></ExecCommand>
-          <Expression>\\sample\joystick/funct_joystick.c\87</Expression>
-        </Bp>
-        <Bp>
-          <Number>3</Number>
-          <Type>0</Type>
-          <LineNumber>84</LineNumber>
-          <EnabledFlag>1</EnabledFlag>
-          <Address>27486</Address>
-          <ByteObject>0</ByteObject>
-          <HtxType>0</HtxType>
-          <ManyObjects>0</ManyObjects>
-          <SizeOfObject>0</SizeOfObject>
-          <BreakByAccess>0</BreakByAccess>
-          <BreakIfRCount>1</BreakIfRCount>
-          <Filename>.\joystick\funct_joystick.c</Filename>
-          <ExecCommand></ExecCommand>
-          <Expression>\\sample\joystick/funct_joystick.c\84</Expression>
+          <Expression>\\sample\game/game.c\730</Expression>
         </Bp>
       </Breakpoint>
       <WatchWindow1>
