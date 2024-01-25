@@ -44,7 +44,7 @@ Section Cross References
     game.o(.text) refers to lib_can.o(.text) for CAN_wrMsg
     game.o(.text) refers to graphic.o(.text) for init_game_graphic
     game.o(.text) refers to lib_can.o(.bss) for CAN_TxMsg
-    game.o(.text) refers to game.o(.data) for last_move
+    game.o(.text) refers to game.o(.data) for this_board_player
     game.o(.text) refers to game.o(.bss) for p0
     game.o(.text) refers to lib_timer.o(.text) for disable_timer
     game.o(.text) refers to lib_rit.o(.text) for disable_RIT
@@ -448,15 +448,15 @@ Image Symbol Table
     .text                                    0x000049c8   Section        0  game.o(.text)
     __NVIC_EnableIRQ                         0x000049c9   Thumb Code    34  game.o(.text)
     __NVIC_DisableIRQ                        0x000049eb   Thumb Code    30  game.o(.text)
-    .text                                    0x0000617c   Section        0  graphic.o(.text)
-    .text                                    0x000067cc   Section        0  lib_rit.o(.text)
-    .text                                    0x0000688c   Section        0  irq_rit.o(.text)
-    .text                                    0x00006994   Section        0  funct_joystick.o(.text)
-    .text                                    0x00006bb8   Section        0  irq_can.o(.text)
-    .text                                    0x00006c90   Section        0  lib_can.o(.text)
-    __NVIC_EnableIRQ                         0x00006c91   Thumb Code    34  lib_can.o(.text)
-    __NVIC_SetPriority                       0x00006cb3   Thumb Code    32  lib_can.o(.text)
-    CAN_cfgBaudrate                          0x00006cd3   Thumb Code    70  lib_can.o(.text)
+    .text                                    0x00006184   Section        0  graphic.o(.text)
+    .text                                    0x000067d4   Section        0  lib_rit.o(.text)
+    .text                                    0x00006894   Section        0  irq_rit.o(.text)
+    .text                                    0x0000699c   Section        0  funct_joystick.o(.text)
+    .text                                    0x00006bc0   Section        0  irq_can.o(.text)
+    .text                                    0x00006c98   Section        0  lib_can.o(.text)
+    __NVIC_EnableIRQ                         0x00006c99   Thumb Code    34  lib_can.o(.text)
+    __NVIC_SetPriority                       0x00006cbb   Thumb Code    32  lib_can.o(.text)
+    CAN_cfgBaudrate                          0x00006cdb   Thumb Code    70  lib_can.o(.text)
     .text                                    0x000071d8   Section        0  _printf_pad.o(.text)
     .text                                    0x00007228   Section        0  _printf_dec.o(.text)
     .text                                    0x000072a0   Section        0  __printf_flags_wp.o(.text)
@@ -666,81 +666,81 @@ Image Symbol Table
     EINT1_IRQHandler                         0x000048b7   Thumb Code    48  irq_button.o(.text)
     EINT2_IRQHandler                         0x000048e7   Thumb Code    48  irq_button.o(.text)
     BUTTON_init                              0x00004949   Thumb Code   106  lib_button.o(.text)
-    send_handshake                           0x00004a09   Thumb Code    42  game.o(.text)
-    send_move                                0x00004a33   Thumb Code    64  game.o(.text)
-    set_player_ready                         0x00004a73   Thumb Code    14  game.o(.text)
-    both_players_ready                       0x00004a81   Thumb Code    28  game.o(.text)
-    set_state                                0x00004a9d   Thumb Code     6  game.o(.text)
-    get_state                                0x00004aa3   Thumb Code     6  game.o(.text)
-    set_mode                                 0x00004aa9   Thumb Code     6  game.o(.text)
-    get_mode                                 0x00004aaf   Thumb Code     6  game.o(.text)
-    set_board_player                         0x00004ab5   Thumb Code     6  game.o(.text)
-    get_board_player                         0x00004abb   Thumb Code     6  game.o(.text)
-    is_this_board_playing                    0x00004ac1   Thumb Code    36  game.o(.text)
-    set_player_type                          0x00004ae5   Thumb Code    14  game.o(.text)
-    move_pos                                 0x00004af3   Thumb Code    86  game.o(.text)
-    init_game                                0x00004b49   Thumb Code   348  game.o(.text)
-    pos_eq                                   0x00004ca5   Thumb Code    34  game.o(.text)
-    can_go                                   0x00004cc7   Thumb Code    38  game.o(.text)
-    find_exit                                0x00004ced   Thumb Code   564  game.o(.text)
-    reset_visited                            0x00004f21   Thumb Code    50  game.o(.text)
-    is_valid_wall                            0x00004f53   Thumb Code    62  game.o(.text)
-    place_wall                               0x00004f91   Thumb Code   928  game.o(.text)
-    reset_all_walls                          0x00005331   Thumb Code    54  game.o(.text)
-    apply_mode                               0x00005367   Thumb Code  1080  game.o(.text)
-    select_move                              0x0000579f   Thumb Code   542  game.o(.text)
-    rotate_wall                              0x000059bd   Thumb Code    48  game.o(.text)
-    change_mode                              0x000059ed   Thumb Code    98  game.o(.text)
-    register_move                            0x00005a4f   Thumb Code   156  game.o(.text)
-    reset_time_left                          0x00005aeb   Thumb Code    38  game.o(.text)
-    check_win_condition                      0x00005b11   Thumb Code    42  game.o(.text)
-    confirm_move                             0x00005b3b   Thumb Code   386  game.o(.text)
-    register_ai_move                         0x00005cbd   Thumb Code   730  game.o(.text)
-    rebuild_ai_moves                         0x00005f97   Thumb Code    30  game.o(.text)
-    AI                                       0x00005fb5   Thumb Code    92  game.o(.text)
-    finish_turn                              0x00006011   Thumb Code    58  game.o(.text)
-    time_finished                            0x0000604b   Thumb Code    32  game.o(.text)
-    tick_tack                                0x0000606b   Thumb Code    72  game.o(.text)
-    start_game                               0x000060b3   Thumb Code    68  game.o(.text)
-    receive_move                             0x000060f7   Thumb Code    94  game.o(.text)
-    get_center_axis                          0x0000617d   Thumb Code    10  graphic.o(.text)
-    draw_rectangle                           0x00006187   Thumb Code   212  graphic.o(.text)
-    draw_square                              0x0000625b   Thumb Code    42  graphic.o(.text)
-    fill_rectangle                           0x00006285   Thumb Code    48  graphic.o(.text)
-    highlight_square                         0x000062b5   Thumb Code    52  graphic.o(.text)
-    draw_player                              0x000062e9   Thumb Code   108  graphic.o(.text)
-    erase_player                             0x00006355   Thumb Code    18  graphic.o(.text)
-    set_player_walls                         0x00006367   Thumb Code    56  graphic.o(.text)
-    draw_wall                                0x0000639f   Thumb Code   108  graphic.o(.text)
-    erase_wall                               0x0000640b   Thumb Code    22  graphic.o(.text)
-    clear_notification                       0x00006421   Thumb Code    36  graphic.o(.text)
-    notify                                   0x00006445   Thumb Code    36  graphic.o(.text)
-    write_player_turn                        0x00006469   Thumb Code    34  graphic.o(.text)
-    write_remaining_time                     0x0000648b   Thumb Code    36  graphic.o(.text)
-    init_game_graphic                        0x000064af   Thumb Code   152  graphic.o(.text)
-    highlight_choice                         0x00006547   Thumb Code    74  graphic.o(.text)
-    draw_multiplayer_select                  0x00006591   Thumb Code    98  graphic.o(.text)
-    draw_other_player_select                 0x000065f3   Thumb Code   118  graphic.o(.text)
-    draw_this_player_select                  0x00006669   Thumb Code   118  graphic.o(.text)
-    draw_waiting_screen                      0x000066df   Thumb Code    28  graphic.o(.text)
-    enable_RIT                               0x000067cd   Thumb Code    14  lib_rit.o(.text)
-    disable_RIT                              0x000067db   Thumb Code    14  lib_rit.o(.text)
-    reset_RIT                                0x000067e9   Thumb Code     8  lib_rit.o(.text)
-    init_RIT                                 0x000067f1   Thumb Code   134  lib_rit.o(.text)
-    RIT_IRQHandler                           0x0000688d   Thumb Code   236  irq_rit.o(.text)
-    joystick_up                              0x00006995   Thumb Code    62  funct_joystick.o(.text)
-    joystick_down                            0x000069d3   Thumb Code    62  funct_joystick.o(.text)
-    joystick_left                            0x00006a11   Thumb Code    24  funct_joystick.o(.text)
-    joystick_right                           0x00006a29   Thumb Code    24  funct_joystick.o(.text)
-    joystick_select                          0x00006a41   Thumb Code   324  funct_joystick.o(.text)
-    CAN_IRQHandler                           0x00006bb9   Thumb Code   202  irq_can.o(.text)
-    CAN_setup                                0x00006d19   Thumb Code   156  lib_can.o(.text)
-    CAN_start                                0x00006db5   Thumb Code    18  lib_can.o(.text)
-    CAN_waitReady                            0x00006dc7   Thumb Code    26  lib_can.o(.text)
-    CAN_wrMsg                                0x00006de1   Thumb Code    84  lib_can.o(.text)
-    CAN_rdMsg                                0x00006e35   Thumb Code    52  lib_can.o(.text)
-    CAN_wrFilter                             0x00006e69   Thumb Code   832  lib_can.o(.text)
-    CAN_Init                                 0x000071a9   Thumb Code    32  lib_can.o(.text)
+    send_handshake                           0x00004a09   Thumb Code    46  game.o(.text)
+    send_move                                0x00004a37   Thumb Code    68  game.o(.text)
+    set_player_ready                         0x00004a7b   Thumb Code    14  game.o(.text)
+    both_players_ready                       0x00004a89   Thumb Code    28  game.o(.text)
+    set_state                                0x00004aa5   Thumb Code     6  game.o(.text)
+    get_state                                0x00004aab   Thumb Code     6  game.o(.text)
+    set_mode                                 0x00004ab1   Thumb Code     6  game.o(.text)
+    get_mode                                 0x00004ab7   Thumb Code     6  game.o(.text)
+    set_board_player                         0x00004abd   Thumb Code     6  game.o(.text)
+    get_board_player                         0x00004ac3   Thumb Code     6  game.o(.text)
+    is_this_board_playing                    0x00004ac9   Thumb Code    36  game.o(.text)
+    set_player_type                          0x00004aed   Thumb Code    14  game.o(.text)
+    move_pos                                 0x00004afb   Thumb Code    86  game.o(.text)
+    init_game                                0x00004b51   Thumb Code   348  game.o(.text)
+    pos_eq                                   0x00004cad   Thumb Code    34  game.o(.text)
+    can_go                                   0x00004ccf   Thumb Code    38  game.o(.text)
+    find_exit                                0x00004cf5   Thumb Code   564  game.o(.text)
+    reset_visited                            0x00004f29   Thumb Code    50  game.o(.text)
+    is_valid_wall                            0x00004f5b   Thumb Code    62  game.o(.text)
+    place_wall                               0x00004f99   Thumb Code   928  game.o(.text)
+    reset_all_walls                          0x00005339   Thumb Code    54  game.o(.text)
+    apply_mode                               0x0000536f   Thumb Code  1080  game.o(.text)
+    select_move                              0x000057a7   Thumb Code   542  game.o(.text)
+    rotate_wall                              0x000059c5   Thumb Code    48  game.o(.text)
+    change_mode                              0x000059f5   Thumb Code    98  game.o(.text)
+    register_move                            0x00005a57   Thumb Code   156  game.o(.text)
+    reset_time_left                          0x00005af3   Thumb Code    38  game.o(.text)
+    check_win_condition                      0x00005b19   Thumb Code    42  game.o(.text)
+    confirm_move                             0x00005b43   Thumb Code   388  game.o(.text)
+    register_ai_move                         0x00005cc7   Thumb Code   728  game.o(.text)
+    rebuild_ai_moves                         0x00005f9f   Thumb Code    30  game.o(.text)
+    AI                                       0x00005fbd   Thumb Code    92  game.o(.text)
+    finish_turn                              0x00006019   Thumb Code    58  game.o(.text)
+    time_finished                            0x00006053   Thumb Code    32  game.o(.text)
+    tick_tack                                0x00006073   Thumb Code    72  game.o(.text)
+    start_game                               0x000060bb   Thumb Code    68  game.o(.text)
+    receive_move                             0x000060ff   Thumb Code    94  game.o(.text)
+    get_center_axis                          0x00006185   Thumb Code    10  graphic.o(.text)
+    draw_rectangle                           0x0000618f   Thumb Code   212  graphic.o(.text)
+    draw_square                              0x00006263   Thumb Code    42  graphic.o(.text)
+    fill_rectangle                           0x0000628d   Thumb Code    48  graphic.o(.text)
+    highlight_square                         0x000062bd   Thumb Code    52  graphic.o(.text)
+    draw_player                              0x000062f1   Thumb Code   108  graphic.o(.text)
+    erase_player                             0x0000635d   Thumb Code    18  graphic.o(.text)
+    set_player_walls                         0x0000636f   Thumb Code    56  graphic.o(.text)
+    draw_wall                                0x000063a7   Thumb Code   108  graphic.o(.text)
+    erase_wall                               0x00006413   Thumb Code    22  graphic.o(.text)
+    clear_notification                       0x00006429   Thumb Code    36  graphic.o(.text)
+    notify                                   0x0000644d   Thumb Code    36  graphic.o(.text)
+    write_player_turn                        0x00006471   Thumb Code    34  graphic.o(.text)
+    write_remaining_time                     0x00006493   Thumb Code    36  graphic.o(.text)
+    init_game_graphic                        0x000064b7   Thumb Code   152  graphic.o(.text)
+    highlight_choice                         0x0000654f   Thumb Code    74  graphic.o(.text)
+    draw_multiplayer_select                  0x00006599   Thumb Code    98  graphic.o(.text)
+    draw_other_player_select                 0x000065fb   Thumb Code   118  graphic.o(.text)
+    draw_this_player_select                  0x00006671   Thumb Code   118  graphic.o(.text)
+    draw_waiting_screen                      0x000066e7   Thumb Code    28  graphic.o(.text)
+    enable_RIT                               0x000067d5   Thumb Code    14  lib_rit.o(.text)
+    disable_RIT                              0x000067e3   Thumb Code    14  lib_rit.o(.text)
+    reset_RIT                                0x000067f1   Thumb Code     8  lib_rit.o(.text)
+    init_RIT                                 0x000067f9   Thumb Code   134  lib_rit.o(.text)
+    RIT_IRQHandler                           0x00006895   Thumb Code   236  irq_rit.o(.text)
+    joystick_up                              0x0000699d   Thumb Code    62  funct_joystick.o(.text)
+    joystick_down                            0x000069db   Thumb Code    62  funct_joystick.o(.text)
+    joystick_left                            0x00006a19   Thumb Code    24  funct_joystick.o(.text)
+    joystick_right                           0x00006a31   Thumb Code    24  funct_joystick.o(.text)
+    joystick_select                          0x00006a49   Thumb Code   324  funct_joystick.o(.text)
+    CAN_IRQHandler                           0x00006bc1   Thumb Code   202  irq_can.o(.text)
+    CAN_setup                                0x00006d21   Thumb Code   156  lib_can.o(.text)
+    CAN_start                                0x00006dbd   Thumb Code    18  lib_can.o(.text)
+    CAN_waitReady                            0x00006dcf   Thumb Code    26  lib_can.o(.text)
+    CAN_wrMsg                                0x00006de9   Thumb Code    84  lib_can.o(.text)
+    CAN_rdMsg                                0x00006e3d   Thumb Code    52  lib_can.o(.text)
+    CAN_wrFilter                             0x00006e71   Thumb Code   832  lib_can.o(.text)
+    CAN_Init                                 0x000071b1   Thumb Code    22  lib_can.o(.text)
     _printf_pre_padding                      0x000071d9   Thumb Code    44  _printf_pad.o(.text)
     _printf_post_padding                     0x00007205   Thumb Code    34  _printf_pad.o(.text)
     _printf_int_dec                          0x00007229   Thumb Code   104  _printf_dec.o(.text)
@@ -871,13 +871,13 @@ Memory Map of the image
     0x00000788   0x00000788   0x000040e4   Code   RO          213    .text               glcd.o
     0x0000486c   0x0000486c   0x000000bc   Code   RO          259    .text               irq_button.o
     0x00004928   0x00004928   0x000000a0   Code   RO          302    .text               lib_button.o
-    0x000049c8   0x000049c8   0x000017b4   Code   RO          330    .text               game.o
-    0x0000617c   0x0000617c   0x00000650   Code   RO          382    .text               graphic.o
-    0x000067cc   0x000067cc   0x000000c0   Code   RO          413    .text               lib_rit.o
-    0x0000688c   0x0000688c   0x00000108   Code   RO          444    .text               irq_rit.o
-    0x00006994   0x00006994   0x00000224   Code   RO          473    .text               funct_joystick.o
-    0x00006bb8   0x00006bb8   0x000000d8   Code   RO          533    .text               irq_can.o
-    0x00006c90   0x00006c90   0x00000548   Code   RO          573    .text               lib_can.o
+    0x000049c8   0x000049c8   0x000017bc   Code   RO          330    .text               game.o
+    0x00006184   0x00006184   0x00000650   Code   RO          382    .text               graphic.o
+    0x000067d4   0x000067d4   0x000000c0   Code   RO          413    .text               lib_rit.o
+    0x00006894   0x00006894   0x00000108   Code   RO          444    .text               irq_rit.o
+    0x0000699c   0x0000699c   0x00000224   Code   RO          473    .text               funct_joystick.o
+    0x00006bc0   0x00006bc0   0x000000d8   Code   RO          533    .text               irq_can.o
+    0x00006c98   0x00006c98   0x00000540   Code   RO          573    .text               lib_can.o
     0x000071d8   0x000071d8   0x0000004e   Code   RO          614    .text               c_w.l(_printf_pad.o)
     0x00007226   0x00007226   0x00000002   PAD
     0x00007228   0x00007228   0x00000078   Code   RO          616    .text               c_w.l(_printf_dec.o)
@@ -937,7 +937,7 @@ Image component sizes
 
         32          6       1520          0          0        983   asciilib.o
        548         52          0          1          0       1974   funct_joystick.o
-      6068        332          0         32        812      11643   game.o
+      6076        330          0         32        812      11643   game.o
      16612        104          0          1          0      40047   glcd.o
       1616        210          0          2          0       5492   graphic.o
        188         18          0          0          0        973   irq_button.o
@@ -945,7 +945,7 @@ Image component sizes
        264         28          0         20          0        673   irq_rit.o
        256         30          0          8          0      18102   irq_timer.o
        160         22          0          0          0        758   lib_button.o
-      1352         74         68         16         32       4424   lib_can.o
+      1344         76         68         16         32       4424   lib_can.o
         36         10          0          0          0        412   lib_joystick.o
        192         22          0          0          0      27587   lib_rit.o
        316         14          0          0          0       1532   lib_timer.o

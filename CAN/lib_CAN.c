@@ -303,7 +303,7 @@ void CAN_Init (void) {
   CAN_setup (1);                                  /* setup CAN Controller #1 */
   //CAN_setup (2);                                  /* setup CAN Controller #2 */
 	
-  CAN_wrFilter (1, 1, STANDARD_FORMAT);          /* Enable reception on CAN 1 of messages from CAN 2 - TBV */
+  //CAN_wrFilter (1, 1, STANDARD_FORMAT);          /* Enable reception on CAN 1 of messages from CAN 2 - TBV */
 	//CAN_wrFilter (2, 2, STANDARD_FORMAT); 				 /* Enable reception on CAN 2 of messages from CAN 1 - TBV */
 	
   CAN_start (1);                                  /* start CAN Controller #1 */
