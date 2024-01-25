@@ -65,7 +65,7 @@ void send_handshake(void) {
 	CAN_TxMsg.data[2] = 0;
 	CAN_TxMsg.data[3] = 0;
 	CAN_TxMsg.len = 4;
-	CAN_TxMsg.id = this_board_player + 1;
+	CAN_TxMsg.id = 1;
 	CAN_TxMsg.format = STANDARD_FORMAT;
 	CAN_TxMsg.type = DATA_FRAME;
 	CAN_wrMsg (1, &CAN_TxMsg);               /* transmit message on CAN1 */
@@ -77,7 +77,7 @@ void send_move(void) {
 	CAN_TxMsg.data[2] = (last_move >> 8) & 0xFF;
 	CAN_TxMsg.data[3] = last_move & 0xFF;
 	CAN_TxMsg.len = 4;
-	CAN_TxMsg.id = this_board_player + 1;
+	CAN_TxMsg.id = 1;
 	CAN_TxMsg.format = STANDARD_FORMAT;
 	CAN_TxMsg.type = DATA_FRAME;
 	CAN_wrMsg (1, &CAN_TxMsg);               /* transmit message on CAN1 */

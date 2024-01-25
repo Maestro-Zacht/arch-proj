@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\sample.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\sample.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Thu Jan 25 10:15:03 2024
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Thu Jan 25 11:23:06 2024
 <BR><P>
 <H3>Maximum Stack Usage =        312 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -638,7 +638,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[3f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[6c]"></a>send_handshake</STRONG> (Thumb, 46 bytes, Stack size 8 bytes, game.o(.text))
+<P><STRONG><a name="[6c]"></a>send_handshake</STRONG> (Thumb, 42 bytes, Stack size 8 bytes, game.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 20<LI>Call Chain = send_handshake &rArr; CAN_wrMsg
 </UL>
 <BR>[Calls]<UL><LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_wrMsg
@@ -646,7 +646,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;joystick_select
 </UL>
 
-<P><STRONG><a name="[6e]"></a>send_move</STRONG> (Thumb, 68 bytes, Stack size 8 bytes, game.o(.text))
+<P><STRONG><a name="[6e]"></a>send_move</STRONG> (Thumb, 64 bytes, Stack size 8 bytes, game.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 20<LI>Call Chain = send_move &rArr; CAN_wrMsg
 </UL>
 <BR>[Calls]<UL><LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_wrMsg
@@ -878,7 +878,7 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;confirm_move
 </UL>
 
-<P><STRONG><a name="[83]"></a>confirm_move</STRONG> (Thumb, 394 bytes, Stack size 32 bytes, game.o(.text))
+<P><STRONG><a name="[83]"></a>confirm_move</STRONG> (Thumb, 392 bytes, Stack size 32 bytes, game.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 232 + Unknown Stack Size
  + In Cycle
 <LI>Call Chain = confirm_move &rArr;  finish_turn (Cycle)
@@ -904,7 +904,7 @@ Global Symbols
 <LI><a href="#[8b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AI
 </UL>
 
-<P><STRONG><a name="[89]"></a>register_ai_move</STRONG> (Thumb, 730 bytes, Stack size 32 bytes, game.o(.text))
+<P><STRONG><a name="[89]"></a>register_ai_move</STRONG> (Thumb, 728 bytes, Stack size 32 bytes, game.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 48 + In Cycle
 <LI>Call Chain = register_ai_move &rArr;  register_ai_move (Cycle)
 </UL>
