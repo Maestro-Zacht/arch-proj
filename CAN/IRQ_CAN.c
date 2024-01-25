@@ -32,27 +32,25 @@ void CAN_IRQHandler (void)  {
 	if (icr & (1 << 0)) {
 		CAN_rdMsg (1, &CAN_RxMsg);	                		/* Read the message */
 		LPC_CAN1->CMR = (1 << 2);                    		/* Release receive buffer */
-		if (get_state() == STARTING || ((CAN_RxMsg.id - 1) == (get_board_player() + 1) % 2)) {
-			if (get_state() == PLAYING && !is_this_board_playing()) {
-				received_move = (CAN_RxMsg.data[0] << 24) |
-												(CAN_RxMsg.data[1] << 16) |
-												(CAN_RxMsg.data[2] << 8) |
-												 CAN_RxMsg.data[3];
-				receive_move(received_move);
-			}
-			else if (get_state() == STARTING && CAN_RxMsg.data[0] == 0xFF) {
-				set_mode(MULTIPLAYER);
-				set_board_player(1);
-				set_player_type(0, REMOTE);
-				set_state(CHOOSE_THIS_PLAYER);
-				draw_this_player_select();
-				enable_RIT();
-			}
-			else if ((get_state() == CHOOSE_THIS_PLAYER || get_state() == WAITING_MULTIPLAYER) && CAN_RxMsg.data[0] == 0xFF) {
-				set_player_ready((get_board_player() + 1) % 2, 1);
-				if (both_players_ready())
-					start_game();
-			}
+		if (get_state() == PLAYING && !is_this_board_playing()) {
+			received_move = (CAN_RxMsg.data[0] << 24) |
+											(CAN_RxMsg.data[1] << 16) |
+											(CAN_RxMsg.data[2] << 8) |
+											 CAN_RxMsg.data[3];
+			receive_move(received_move);
+		}
+		else if (get_state() == STARTING && CAN_RxMsg.data[0] == 0xFF) {
+			set_mode(MULTIPLAYER);
+			set_board_player(1);
+			set_player_type(0, REMOTE);
+			set_state(CHOOSE_THIS_PLAYER);
+			draw_this_player_select();
+			enable_RIT();
+		}
+		else if ((get_state() == CHOOSE_THIS_PLAYER || get_state() == WAITING_MULTIPLAYER) && CAN_RxMsg.data[0] == 0xFF) {
+			set_player_ready((get_board_player() + 1) % 2, 1);
+			if (both_players_ready())
+				start_game();
 		}
 	}
 	

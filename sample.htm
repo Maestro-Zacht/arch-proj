@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\sample.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\sample.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Thu Jan 25 11:23:28 2024
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Thu Jan 25 11:27:40 2024
 <BR><P>
 <H3>Maximum Stack Usage =        312 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -1299,7 +1299,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[2a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RIT_IRQHandler
 </UL>
 
-<P><STRONG><a name="[26]"></a>CAN_IRQHandler</STRONG> (Thumb, 228 bytes, Stack size 16 bytes, irq_can.o(.text))
+<P><STRONG><a name="[26]"></a>CAN_IRQHandler</STRONG> (Thumb, 202 bytes, Stack size 16 bytes, irq_can.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 312 + Unknown Stack Size
 <LI>Call Chain = CAN_IRQHandler &rArr; receive_move &rArr; time_finished &rArr; finish_turn &rArr; AI &rArr; select_move &rArr; apply_mode &rArr; reset_all_walls &rArr; draw_wall &rArr; fill_rectangle &rArr; LCD_DrawLine &rArr; LCD_SetPoint &rArr; LCD_SetCursor
 </UL>
