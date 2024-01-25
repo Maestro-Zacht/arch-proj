@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\sample.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\sample.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Thu Jan 18 16:10:02 2024
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Thu Jan 25 10:15:03 2024
 <BR><P>
 <H3>Maximum Stack Usage =        312 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -1196,9 +1196,13 @@ Global Symbols
 <LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;joystick_select
 </UL>
 
-<P><STRONG><a name="[99]"></a>draw_waiting_screen</STRONG> (Thumb, 28 bytes, Stack size 8 bytes, graphic.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_Text
+<P><STRONG><a name="[99]"></a>draw_waiting_screen</STRONG> (Thumb, 28 bytes, Stack size 8 bytes, graphic.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 144<LI>Call Chain = draw_waiting_screen &rArr; GUI_Text &rArr; PutChar &rArr; LCD_SetPoint &rArr; LCD_SetCursor
+</UL>
+<BR>[Calls]<UL><LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_Text
 <LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_Clear
+</UL>
+<BR>[Called By]<UL><LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;joystick_select
 </UL>
 
 <P><STRONG><a name="[68]"></a>enable_RIT</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, lib_rit.o(.text))
@@ -1272,11 +1276,12 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[2a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RIT_IRQHandler
 </UL>
 
-<P><STRONG><a name="[9e]"></a>joystick_select</STRONG> (Thumb, 320 bytes, Stack size 16 bytes, funct_joystick.o(.text))
+<P><STRONG><a name="[9e]"></a>joystick_select</STRONG> (Thumb, 324 bytes, Stack size 16 bytes, funct_joystick.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 280 + Unknown Stack Size
 <LI>Call Chain = joystick_select &rArr; start_game &rArr; AI &rArr; select_move &rArr; apply_mode &rArr; reset_all_walls &rArr; draw_wall &rArr; fill_rectangle &rArr; LCD_DrawLine &rArr; LCD_SetPoint &rArr; LCD_SetCursor
 </UL>
-<BR>[Calls]<UL><LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;draw_this_player_select
+<BR>[Calls]<UL><LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;draw_waiting_screen
+<LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;draw_this_player_select
 <LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;draw_other_player_select
 <LI><a href="#[8e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;start_game
 <LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;confirm_move
