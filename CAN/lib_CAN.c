@@ -86,12 +86,14 @@ void CAN_setup (uint32_t ctrl)  {
     LPC_PINCON->PINSEL0 |=  (1 <<  2);           /* Pin P0.1 used as TD1 (CAN1) */
     
     NVIC_EnableIRQ(CAN_IRQn);                    /* Enable CAN interrupt */
+		NVIC_SetPriority(CAN_IRQn, 6);
   } else {
     LPC_SC->PCONP       |=  (1 << 14);           /* Enable power to CAN2 block */
     LPC_PINCON->PINSEL0 |=  (1 <<  9);           /* Pin P0.4 used as RD2 (CAN2) */
     LPC_PINCON->PINSEL0 |=  (1 << 11);           /* Pin P0.5 used as TD2 (CAN2) */
     
     NVIC_EnableIRQ(CAN_IRQn);                    /* Enable CAN interrupt */
+		NVIC_SetPriority(CAN_IRQn, 6);
   }
 
   LPC_CANAF->AFMR = 2;                           /* By default filter is not used */
@@ -99,7 +101,8 @@ void CAN_setup (uint32_t ctrl)  {
   pCAN->IER   = 0;                               /* Disable all interrupts */
   pCAN->GSR   = 0;                               /* Clear status register */
   CAN_cfgBaudrate(ctrl, 1000000);                /* Set bit timing */
-  pCAN->IER   = 0x0003;                          /* Enable Tx and Rx interrupt */
+//  pCAN->IER   = 0x0003;                          /* Enable Tx and Rx interrupt */
+	pCAN->IER   = 0x0001;
 }
 
 
@@ -298,16 +301,16 @@ void CAN_wrFilter (uint32_t ctrl, uint32_t id, uint8_t format)  {
 void CAN_Init (void) {
 
   CAN_setup (1);                                  /* setup CAN Controller #1 */
-  CAN_setup (2);                                  /* setup CAN Controller #2 */
+  //CAN_setup (2);                                  /* setup CAN Controller #2 */
 	
   CAN_wrFilter (1, 1, STANDARD_FORMAT);          /* Enable reception on CAN 1 of messages from CAN 2 - TBV */
-	CAN_wrFilter (2, 2, STANDARD_FORMAT); 				 /* Enable reception on CAN 2 of messages from CAN 1 - TBV */
+	//CAN_wrFilter (2, 2, STANDARD_FORMAT); 				 /* Enable reception on CAN 2 of messages from CAN 1 - TBV */
 	
   CAN_start (1);                                  /* start CAN Controller #1 */
-  CAN_start (2);                                  /* start CAN Controller #2 */
+  //CAN_start (2);                                  /* start CAN Controller #2 */
 
   CAN_waitReady (1);                              /* wait til tx mbx is empty */
-  CAN_waitReady (2);                              /* wait til tx mbx is empty */
+  //CAN_waitReady (2);                              /* wait til tx mbx is empty */
 }
 
 

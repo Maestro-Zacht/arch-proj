@@ -557,6 +557,7 @@ void tick_tack(void) {
 		if (!is_this_board_playing()) {
 			time_left = 0;
 			write_remaining_time(time_left);
+			disable_timer(3);
 		}
 		else
 			time_finished();
